@@ -1,0 +1,65 @@
+  .skills-section {
+    text-align: center;
+    padding: 60px 0;
+    animation: fadeInTop 1s ease forwards;
+  }
+  .skills-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideInDown 1.2s ease forwards;
+  }
+  .skill-item {
+    display: inline-block;
+    margin: 15px;
+    width: 120px;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+  .skill-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .skill-item img:hover {
+    transform: scale(1.2);
+  }
+  .skill-label {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInTop {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

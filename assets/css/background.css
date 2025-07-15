@@ -1,0 +1,78 @@
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('assets/img/bg/top-bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    overflow-x: hidden;
+    }
+	.project-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .project-card .btn {
+        margin-top: 10px;
+    }
+    #about img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border: 5px solid #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    section {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 30px;
+        margin: 40px auto;
+        max-width: 1100px;
+    }
+    h2, h4, p, a {
+        color: #fff;
+    }
+    .btn-outline-primary {
+        border-color: #fff;
+        color: #fff;
+    }
+    .btn-outline-primary:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    .social-icons .icon-box {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.863);
+    padding: 12px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background 0.3s;
+    backdrop-filter: blur(4px);
+  }
+
+
+    .icon-glow {
+    padding: 5px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.925);
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s;
+    }
+
+    .icon-glow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+
+  .icon-glow:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.491);
+  }
+
+  
+
