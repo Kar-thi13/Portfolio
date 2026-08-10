@@ -276,6 +276,43 @@
 
 }
 
+/* Internship duration */
+.date-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.calendar-icon {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: 50%;
+    box-shadow: none;
+
+    display: block;
+
+    flex-shrink: 0;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* 3D hover animation */
+
+
+.date-info span {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    white-space: nowrap;
+}
 
 /* Highlight / Extracurricular Image */
 .highlight-icon {
