@@ -19,11 +19,11 @@
 	transition: transform 0.8s;
 	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 	border-radius: 15px;
-}
-.flip-card-inner.rotate-now {
+} */
+/* .flip-card-inner.rotate-now {
 	transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
+} */
+/* .flip-card-front, .flip-card-back {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -40,26 +40,26 @@
 	padding: 25px;
 	box-sizing: border-box;
 	transition: background 0.5s;
-}
-.flip-card-front {
+} */
+/* .flip-card-front {
 	background: linear-gradient(135deg, #1f1f1f, #2d2d2d);
 	color: white;
 	z-index: 2;
-}
-.flip-card-back {
+} */
+/* .flip-card-back {
 	background: linear-gradient(135deg, #444, #111);
 	color: white;
 	transform: rotateY(180deg);
 	z-index: 1;
 }
-.flip-card img {
+*/.flip-card img {
 	width: 100%;
 	max-width: 500px;
 	height: 200px;
 	object-fit: cover;
 	border-radius: 10px;
 	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-}
+}/*
 .flip-card h4 {
 	margin-top: 15px;
 	font-size: 1.4rem;
@@ -71,8 +71,8 @@
 	text-align: center;
 	margin: 15px 0;
 	line-height: 1.6;
-}
-.flip-card button {
+} */
+/* .flip-card button {
 	margin-top: auto;
 	padding: 8px 20px;
 	border-radius: 30px;
@@ -90,7 +90,7 @@
 	.flip-card {
 	height: 400px;
 	}
-} */
+}  */
 
 /* =========================================
    EXPERIENCE / HIGHLIGHT CARD
@@ -159,6 +159,7 @@
     color: white;
 
     transform: rotateY(0deg);
+    
 }
 
 
@@ -198,10 +199,10 @@
 ========================================= */
 
 .flip-card h4 {
-    margin-bottom: 15px;
-    font-size: 1.35rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+   margin-top: 15px;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .flip-card h5 {
@@ -395,5 +396,420 @@
     .flip-card p,
     .flip-card li {
         font-size: 0.88rem;
+    }
+}
+
+
+
+
+
+/* =========================================================
+   EXPERIENCE / HIGHLIGHT CARDS
+   ========================================================= */
+
+.highlight-card {
+    width: 100%;
+    height: 390px;
+    perspective: 1200px;
+    margin-bottom: 25px;
+}
+
+/* 3D CARD INNER */
+
+.highlight-card .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+    border-radius: 18px;
+}
+
+/* FLIP */
+
+.highlight-card .flip-card-inner.rotate-now {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================================================
+   FRONT + BACK
+   ========================================================= */
+
+.highlight-card .flip-card-front,
+.highlight-card .flip-card-back {
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   FRONT
+   ========================================================= */
+
+.highlight-card .flip-card-front {
+
+    background:
+        linear-gradient(
+            145deg,
+            #1f1f1f,
+            #292929
+        );
+
+    color: white;
+
+    transform: rotateY(0deg);
+}
+
+
+/* =========================================================
+   BACK
+   ========================================================= */
+
+.highlight-card .flip-card-back {
+
+    background:
+        linear-gradient(
+            145deg,
+            #292929,
+            #111111
+        );
+
+    color: white;
+
+    transform: rotateY(180deg);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-card:hover .flip-card-inner {
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.40);
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.highlight-card h4 {
+
+    margin: 8px 0 10px;
+
+    font-size: 1.25rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.highlight-card h5 {
+
+    margin: 5px 0;
+
+    font-size: 1rem;
+}
+
+.highlight-card h6 {
+
+    margin: 5px 0 8px;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.highlight-card p {
+
+    font-size: 0.88rem;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    margin: 8px 0;
+
+    max-width: 90%;
+}
+
+
+/* =========================================================
+   BACK SIDE LIST
+   ========================================================= */
+
+.highlight-card .flip-card-back ul {
+
+    width: 90%;
+
+    padding-left: 20px;
+
+    margin: 8px 0 12px;
+}
+
+.highlight-card .flip-card-back li {
+
+    margin-bottom: 6px;
+
+    font-size: 0.86rem;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   EXPERIENCE ICON
+   ========================================================= */
+
+.highlight-card .experience-icon {
+
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* 3D ICON ANIMATION */
+
+.highlight-card:hover .experience-icon {
+
+    transform:
+        translateY(-5px)
+        translateZ(15px)
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255, 255, 255, 0.55)
+        );
+}
+
+
+/* =========================================================
+   EXTRACURRICULAR / HIGHLIGHT IMAGE
+   ========================================================= */
+
+.highlight-card .highlight-icon {
+
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+.highlight-card:hover .highlight-icon {
+
+    transform:
+        translateY(-5px)
+        translateZ(15px)
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255, 255, 255, 0.55)
+        );
+}
+
+
+/* =========================================================
+   DATE / DURATION
+   ========================================================= */
+
+.highlight-card .date-info {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 8px 0 10px;
+}
+
+
+.highlight-card .calendar-icon {
+
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
+
+    flex-shrink: 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* .highlight-card:hover .calendar-icon {
+
+    transform:
+        translateZ(12px)
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255, 255, 255, 0.5)
+        );
+} */
+
+
+.highlight-card .date-info span {
+
+    margin: 0;
+
+    padding: 0;
+
+    line-height: 25px;
+
+    font-size: 0.85rem;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.highlight-card button {
+
+    margin-top: 10px;
+
+    padding: 7px 20px;
+
+    border-radius: 25px;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.highlight-card button:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.03);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .highlight-card {
+        height: 420px;
+    }
+
+    .highlight-card .flip-card-front,
+    .highlight-card .flip-card-back {
+        padding: 20px;
+    }
+
+    .highlight-card .experience-icon,
+    .highlight-card .highlight-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    .highlight-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .highlight-card h5 {
+        font-size: 0.95rem;
+    }
+
+    .highlight-card h6 {
+        font-size: 0.85rem;
+    }
+
+    .highlight-card p,
+    .highlight-card li {
+        font-size: 0.82rem;
     }
 }
