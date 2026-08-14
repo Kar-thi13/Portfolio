@@ -772,12 +772,46 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-5 wow fadeInUp" data-wow-delay="0.4s">
-    <div class="container text-center">
-      <h2 class="test-center mb-5 section-title">Contact</h2>
-      <p><b>Email: </b> karthi13704@gmail.com<br>karthi13raj@gmail.com</p>
-      <p><b>Contact: </b> 6383554468</p>
-    </div>
+  <section id="contact" class="contact-section py-5 wow fadeInUp" data-wow-delay="0.4s">
+
+      <div class="container">
+
+          <h2 class="text-center contact-title mb-2">
+              Get In Touch
+          </h2>
+
+          <p class="text-center contact-subtitle mb-5">
+              Feel free to reach out for opportunities, collaborations, or technical discussions.
+          </p>
+
+          <div class="contact-container">
+
+              <div class="contact-info">
+
+                  <!-- Email 1 -->
+                  <a href="mailto:karthi13704@gmail.com" class="contact-item">
+                      <img src="assets/img/logo/mail.png" alt="Email">
+                      <span>karthi13704@gmail.com</span>
+                  </a>
+
+                  <!-- Email 2 -->
+                  <a href="mailto:karthi13raj@gmail.com" class="contact-item">
+                      <img src="assets/img/logo/mail.png" alt="Email">
+                      <span>karthi13raj@gmail.com</span>
+                  </a>
+
+                  <!-- Phone -->
+                  <a href="tel:+916383554468" class="contact-item">
+                      <img src="assets/img/logo/phone.png" alt="Phone">
+                      <span>+91 6383554468</span>
+                  </a>
+
+              </div>
+
+          </div>
+
+      </div>
+
   </section>
 
   <!--JS Scripts -->
@@ -967,6 +1001,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const navbar = document.querySelector(".portfolio-navbar");
+
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", function () {
+
+        const currentScrollY = window.scrollY;
+
+        /* Always show navbar at the very top */
+        if (currentScrollY <= 20) {
+
+            navbar.classList.remove("nav-hidden");
+            navbar.classList.add("nav-visible");
+
+            lastScrollY = currentScrollY;
+            return;
+        }
+
+        /* SCROLL DOWN */
+        if (currentScrollY > lastScrollY) {
+
+            navbar.classList.remove("nav-visible");
+            navbar.classList.add("nav-hidden");
+
+        }
+
+        /* SCROLL UP */
+        else if (currentScrollY < lastScrollY) {
+
+            navbar.classList.remove("nav-hidden");
+            navbar.classList.add("nav-visible");
+
+        }
+
+        lastScrollY = currentScrollY;
+
+    }, { passive: true });
+
+});
+</script>
 </body>
 </html>

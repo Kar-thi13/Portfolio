@@ -2477,3 +2477,122 @@ a {
             none;
     }
 }
+
+
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 18px;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 280px;
+
+    padding: 16px 22px;
+
+    color: #ffffff !important;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.contact-item i {
+    width: 24px;
+    flex-shrink: 0;
+
+    font-size: 20px;
+    text-align: center;
+
+    color: #ffffff;
+
+    transition:
+        transform 0.35s ease;
+}
+
+.contact-item span {
+    font-size: 0.92rem;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.contact-item:hover {
+    color: #ffffff !important;
+
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border-color:
+        rgba(255, 255, 255, 0.28);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.30);
+}
+
+.contact-item:hover i {
+    transform: scale(1.12);
+}
+
+.contact-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 12px;
+}
+
+/* =========================================================
+   CONTACT MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-info {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .contact-item {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 15px 18px;
+    }
+
+    .contact-item span {
+        font-size: 0.88rem;
+    }
+}
