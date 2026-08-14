@@ -35,11 +35,10 @@
     <!-- Navbar and rest of website -->
 
   <!-- Your existing portfolio content starts here -->
- 	<!-- Existing Navbar -->
-<nav class="navbar navbar-expand-lg portfolio-navbar">
+ 	<nav class="navbar navbar-expand-lg portfolio-navbar" id="mainNavbar">
     <div class="container">
 
-        <!-- Logo / Brand -->
+        <!-- Logo -->
         <a class="navbar-brand portfolio-brand" href="#top">
             <img
                 src="assets/img/logo/logo.jpg"
@@ -54,16 +53,16 @@
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
+            data-bs-target="#portfolioNavbar"
+            aria-controls="portfolioNavbar"
             aria-expanded="false"
-            aria-label="Toggle navigation">
-
+            aria-label="Toggle navigation"
+        >
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navigation -->
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="portfolioNavbar">
 
             <ul class="navbar-nav ms-auto align-items-lg-center">
 
@@ -815,29 +814,8 @@
   </section>
 
   <!--JS Scripts -->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/wow.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        document.querySelectorAll(".flip-card button").forEach(function (button) {
-
-            button.addEventListener("click", function () {
-
-                const card = this.closest(".flip-card-inner");
-
-                if (card) {
-                    card.classList.toggle("rotate-now");
-                }
-
-            });
-
-        });
-
-    });
-  </script>
-
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 
@@ -1004,25 +982,46 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const navbar = document.querySelector(".portfolio-navbar");
+    const navbar = document.getElementById("mainNavbar");
+    const navbarCollapse = document.getElementById("portfolioNavbar");
 
     let lastScrollY = window.scrollY;
+    let ticking = false;
 
-    window.addEventListener("scroll", function () {
+    function handleNavbarScroll() {
 
         const currentScrollY = window.scrollY;
 
-        /* Always show navbar at the very top */
+        /* ================================
+           ALWAYS SHOW AT VERY TOP
+        ================================= */
         if (currentScrollY <= 20) {
 
             navbar.classList.remove("nav-hidden");
             navbar.classList.add("nav-visible");
 
             lastScrollY = currentScrollY;
+            ticking = false;
             return;
         }
 
-        /* SCROLL DOWN */
+        /* ================================
+           MOBILE MENU IS OPEN
+           NEVER HIDE NAVBAR
+        ================================= */
+        if (navbarCollapse.classList.contains("show")) {
+
+            navbar.classList.remove("nav-hidden");
+            navbar.classList.add("nav-visible");
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+            return;
+        }
+
+        /* ================================
+           SCROLL DOWN → HIDE NAVBAR
+        ================================= */
         if (currentScrollY > lastScrollY) {
 
             navbar.classList.remove("nav-visible");
@@ -1030,7 +1029,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        /* SCROLL UP */
+        /* ================================
+           SCROLL UP → SHOW NAVBAR
+        ================================= */
         else if (currentScrollY < lastScrollY) {
 
             navbar.classList.remove("nav-hidden");
@@ -1039,10 +1040,65 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         lastScrollY = currentScrollY;
+        ticking = false;
+    }
+
+
+    window.addEventListener("scroll", function () {
+
+        if (!ticking) {
+
+            window.requestAnimationFrame(handleNavbarScroll);
+
+            ticking = true;
+        }
 
     }, { passive: true });
 
+
+    /* =========================================
+       CLOSE MOBILE MENU AFTER NAV LINK CLICK
+    ========================================= */
+
+    const navLinks = document.querySelectorAll(
+        "#portfolioNavbar .nav-link"
+    );
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (window.innerWidth < 992) {
+
+                const bsCollapse =
+                    bootstrap.Collapse.getInstance(
+                        navbarCollapse
+                    );
+
+                if (bsCollapse) {
+
+                    bsCollapse.hide();
+
+                } else {
+
+                    const collapse =
+                        new bootstrap.Collapse(
+                            navbarCollapse,
+                            {
+                                toggle: false
+                            }
+                        );
+
+                    collapse.hide();
+                }
+            }
+
+        });
+
+    });
+
 });
 </script>
+
 </body>
 </html>

@@ -689,7 +689,28 @@ a {
         box-shadow 0.35s ease,
         border-color 0.35s ease;
 }
+.portfolio-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
 
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+/* Navbar visible */
+.portfolio-navbar.nav-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Navbar hidden */
+.portfolio-navbar.nav-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
 
 /* Slightly stronger glass effect when hovering navbar */
 
@@ -957,7 +978,7 @@ a {
 
 @media (max-width: 991px) {
 
-    .portfolio-navbar {
+    /* .portfolio-navbar {
 
         width:
             calc(100% - 20px);
@@ -970,6 +991,17 @@ a {
 
         border-radius:
             14px;
+    } */
+     .portfolio-navbar {
+        width: 100%;
+    }
+
+    .portfolio-navbar.nav-hidden {
+        transform: translateY(-110%);
+    }
+
+    .portfolio-navbar.nav-visible {
+        transform: translateY(0);
     }
 
 
