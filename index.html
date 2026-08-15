@@ -1099,6 +1099,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    document.querySelectorAll(".flip-card").forEach(function (card) {
+
+        const inner = card.querySelector(".flip-card-inner");
+
+        const buttons = card.querySelectorAll(".flip-button, .btn");
+
+        buttons.forEach(function (button) {
+
+            button.addEventListener("click", function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                inner.classList.toggle("rotate-now");
+
+            });
+
+        });
+
+    });
+
+});
+</script>
 </body>
 </html>
